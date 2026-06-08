@@ -490,69 +490,57 @@ p  { line-height: 1.78; color: var(--text-muted); }
 </div>
 
 <!-- TEAM PAGE -->
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
-
-  <!-- TEAM MEMBER 1: SINDHURAO -->
-  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
-    <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-      <img src="images/team-members/sindhurao.jpg" alt="SindhuRao T.N" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
-    </div>
-    <div style="padding: 24px; text-align: center;">
-      <div style="background: linear-gradient(135deg, var(--green), var(--green-light)); color: var(--white); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">Founder & CEO</div>
-      <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">SindhuRao T.N</h3>
-      <p style="font-size: .85rem; color: var(--text-muted); font-weight: 600; margin: 0;">Founder &amp; Chief Executive Officer</p>
+<div class="page" id="page-team" style="padding-top:70px;">
+  <div style="background:linear-gradient(135deg, var(--navy) 0%, #0a2240 100%); padding:60px 0;">
+    <div class="container" style="text-align:center;">
+      <h1 style="color:var(--white); margin-bottom:14px;">Our Team</h1>
+      <p style="color:rgba(255,255,255,.62); max-width:500px; margin:0 auto;">Meet the dedicated professionals committed to your financial success.</p>
     </div>
   </div>
 
-  <!-- TEAM MEMBER 2: ABHISHEK -->
-  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
-    <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-      <img src="images/team-members/abhishek.jpg" alt="Abhishek Shrivastava" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
-    </div>
-    <div style="padding: 24px; text-align: center;">
-      <div style="background: var(--green-pale); color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">Team Lead</div>
-      <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">Abhishek Shrivastava</h3>
-      <p style="font-size: .85rem; color: var(--text-muted); font-weight: 600; margin: 0;">CEO &amp; Managing Director</p>
-    </div>
-  </div>
+  <section class="section">
+    <div class="container">
+      <div class="center" style="margin-bottom:40px;">
+        <div class="tag">Meet Our Experts</div>
+        <h2 style="color:var(--navy);">Our Leadership Team</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
+        <!-- Team Member 1 -->
+        <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
+          <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/team-members/sindhurao.jpg" alt="SindhuRao T.N" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
+          </div>
+          <div style="padding: 24px; text-align: center;">
+            <div style="background: linear-gradient(135deg, var(--green), var(--green-light)); color: var(--white); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">CEO</div>
+            <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">SindhuRao T.N</h3>
+            <p style="font-size: .85rem; color: var(--green); font-weight: 600; margin: 0;">Founder &amp; Chief Executive Officer</p>
+          </div>
+        </div>
 
-  <!-- TEAM MEMBER 3: AMAREESH -->
-  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
-    <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-      <img src="images/team-members/amareesh.jpg" alt="Amareesh Agrawal" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
-    </div>
-    <div style="padding: 24px; text-align: center;">
-      <div style="background: var(--green-pale); color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">Team Lead</div>
-      <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">Amareesh Agrawal</h3>
-      <p style="font-size: .85rem; color: var(--text-muted); font-weight: 600; margin: 0;">Regional Marketing Director</p>
-    </div>
-  </div>
+        <!-- Team Member 2 -->
+        <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
+          <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/team-members/abhishek.jpg" alt="Abhishek Shrivastava" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
+          </div>
+          <div style="padding: 24px; text-align: center;">
+            <div style="background: var(--green-pale); color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">Team Lead</div>
+            <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">Abhishek Shrivastava</h3>
+            <p style="font-size: .85rem; color: var(--text-muted); font-weight: 600; margin: 0;">CEO &amp; Managing Director</p>
+          </div>
+        </div>
 
-  <!-- TEAM MEMBER 4: USHA DUBEY -->
-  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
-    <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-      <img src="images/team-members/usha.jpg" alt="Usha Dubey" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
-    </div>
-    <div style="padding: 24px; text-align: center;">
-      <div style="background: var(--green-pale); color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">Team Lead</div>
-      <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">Usha Dubey</h3>
-      <p style="font-size: .85rem; color: var(--text-muted); font-weight: 600; margin: 0;">Regional Marketing Director</p>
-    </div>
-  </div>
+        <!-- Team Member 3 -->
+        <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
+          <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/team-members/amareesh.jpg" alt="Amareesh Agrawal" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
+          </div>
+          <div style="padding: 24px; text-align: center;">
+            <div style="background: var(--green-pale); color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">Team Lead</div>
+            <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">Amareesh Agrawal</h3>
+            <p style="font-size: .85rem; color: var(--text-muted); font-weight: 600; margin: 0;">Regional Marketing Director</p>
+          </div>
+        </div>
 
-  <!-- TEAM MEMBER 5: SUPRIYA -->
-  <div style="background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow);">
-    <div style="height: 320px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-      <img src="images/team-members/supriya.jpg" alt="Supriya Swarnkar" style="width:100%; height:100%; object-fit:cover; object-position:top;" onerror="this.parentElement.textContent='👤'">
-    </div>
-    <div style="padding: 24px; text-align: center;">
-      <div style="background: var(--green-pale); color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; display: inline-block; margin-bottom: 12px;">Team Member</div>
-      <h3 style="color: var(--navy); margin-bottom: 4px; font-size: 1.15rem;">Supriya Swarnkar</h3>
-      <p style="font-size: .85rem; color: var(--text-muted); font-weight: 600; margin: 0;">Field Builder</p>
-    </div>
-  </div>
-
-</div>
         <!-- Add more team members as needed -->
       </div>
     </div>
