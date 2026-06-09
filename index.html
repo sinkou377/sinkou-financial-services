@@ -929,8 +929,12 @@ p  { line-height: 1.78; color: var(--text-muted); }
         <div style="background:var(--white); border:1px solid var(--border); border-radius:20px; padding:40px; box-shadow:var(--shadow);">
           <h3 style="color:var(--navy); margin-bottom:28px;">Book a Free Strategy Call</h3>
 
-          <!-- Contact Form — submits via mailto so it works on GitHub Pages without any backend -->
+          <!-- Contact Form — submits via Web3Forms, no email client needed -->
           <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <input type="hidden" name="access_key" value="8943f3eb-e27b-4c76-84a7-1934635cd518">
+            <input type="hidden" name="subject" value="New Strategy Call Request – SINKOU Financial Services">
+            <input type="hidden" name="from_name" value="SINKOU Website">
+            <input type="checkbox" name="botcheck" style="display:none;">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px;">
               <div>
                 <label style="display:block; font-size:.78rem; font-weight:700; color:var(--navy); margin-bottom:7px; text-transform:uppercase; letter-spacing:.05em;">First Name</label>
@@ -1116,35 +1120,41 @@ function prevTestimonial() { goToTestimonial((tIndex - 1 + tCards.length) % tCar
 buildDots();
 setInterval(nextTestimonial, 5000);
 
-// ─── CONTACT FORM ───
-function handleFormSubmit(e) {
+// ─── CONTACT FORM (Web3Forms) ───
+async function handleFormSubmit(e) {
   e.preventDefault();
   const form = e.target;
-  const data = new FormData(form);
+  const btn = form.querySelector('button[type="submit"]');
 
-  const firstName = data.get('firstName') || '';
-  const lastName  = data.get('lastName')  || '';
-  const email     = data.get('email')     || '';
-  const phone     = data.get('phone')     || '';
-  const service   = data.get('service')   || '';
-  const message   = data.get('message')   || '';
+  // Show loading state
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
 
-  const subject = encodeURIComponent('Strategy Call Request – ' + firstName + ' ' + lastName);
-  const body = encodeURIComponent(
-    'New consultation request from your website.\n\n' +
-    'Name:    ' + firstName + ' ' + lastName + '\n' +
-    'Email:   ' + email + '\n' +
-    'Phone:   ' + phone + '\n' +
-    'Service: ' + service + '\n\n' +
-    'Message:\n' + message
-  );
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
 
-  // Open the user's email app pre-filled with the form data
-  window.location.href = 'mailto:sinkou377@gmail.com?subject=' + subject + '&body=' + body;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: json
+    });
+    const data = await res.json();
 
-  // Show success message
-  form.style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+    if (data.success) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Schedule a Free Call →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us at 669-249-2281.');
+    }
+  } catch (err) {
+    btn.textContent = 'Schedule a Free Call →';
+    btn.disabled = false;
+    alert('Network error. Please try again or call us at 669-249-2281.');
+  }
 }
 
 function resetContactForm() {
