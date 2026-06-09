@@ -306,6 +306,32 @@ p  { line-height: 1.78; color: var(--text-muted); }
   text-align: center;
 }
 
+/* ── SERVICES PAGE ── */
+.service-section { padding: 80px 0; }
+.service-section:nth-child(even) { background: var(--off-white); }
+.service-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.service-layout.reverse { direction: rtl; }
+.service-layout.reverse > * { direction: ltr; }
+.service-visual {
+  border-radius: 24px; overflow: hidden; position: relative;
+  height: 340px; display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+.service-tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--green); background: var(--green-pale); padding: 5px 14px; border-radius: 100px; margin-bottom: 14px; }
+.service-text h2 { color: var(--navy); margin-bottom: 16px; font-size: clamp(1.6rem,2.5vw,2.2rem); }
+.service-text p { margin-bottom: 20px; font-size: .95rem; }
+.service-features { list-style: none; margin-bottom: 28px; }
+.service-features li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: .9rem; color: var(--text-muted); }
+.service-features li::before { content: "✓"; color: var(--green); font-weight: 700; font-size: .85rem; width: 20px; height: 20px; background: var(--green-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* SVG illustrations inside service cards */
+.svc-illustration { width: 100%; height: 100%; }
+
+@media (max-width: 768px) {
+  .service-layout, .service-layout.reverse { grid-template-columns: 1fr; direction: ltr; }
+  .service-visual { height: 260px; }
+}
+
 /* ── ANIMATED ORBS in hero ── */
 .hero-orb {
   position: absolute; border-radius: 50%; pointer-events: none; filter: blur(60px); opacity: .18;
@@ -677,35 +703,224 @@ p  { line-height: 1.78; color: var(--text-muted); }
     </div>
   </div>
 
-  <section class="section">
+  <!-- LIFE INSURANCE -->
+  <section class="service-section">
     <div class="container">
-      <h2 style="text-align:center; margin-bottom:48px;">Life Insurance Solutions</h2>
-      <p style="text-align:center; max-width:560px; margin:0 auto 24px;">Protect what matters most with comprehensive coverage designed for every life stage.</p>
-      <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Get Started</a>
+      <div class="service-layout">
+        <div class="service-visual">
+          <svg class="svc-illustration" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1a" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#0d1f3c"/>
+                <stop offset="100%" style="stop-color:#1a3060"/>
+              </linearGradient>
+              <linearGradient id="g1b" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#1a7a4a"/>
+                <stop offset="100%" style="stop-color:#22a35f"/>
+              </linearGradient>
+            </defs>
+            <rect width="500" height="340" fill="url(#g1a)"/>
+            <!-- Shield -->
+            <path d="M250 60 L340 95 L340 185 Q340 240 250 275 Q160 240 160 185 L160 95 Z" fill="url(#g1b)" opacity=".9"/>
+            <path d="M250 80 L320 108 L320 185 Q320 228 250 258 Q180 228 180 185 L180 108 Z" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+            <!-- Checkmark -->
+            <path d="M215 175 L238 198 L285 148" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Family silhouette -->
+            <circle cx="205" cy="305" r="14" fill="rgba(255,255,255,.15)"/>
+            <rect x="197" y="319" width="16" height="20" rx="4" fill="rgba(255,255,255,.15)"/>
+            <circle cx="250" cy="300" r="17" fill="rgba(255,255,255,.2)"/>
+            <rect x="241" y="317" width="18" height="22" rx="4" fill="rgba(255,255,255,.2)"/>
+            <circle cx="295" cy="305" r="14" fill="rgba(255,255,255,.15)"/>
+            <rect x="287" y="319" width="16" height="20" rx="4" fill="rgba(255,255,255,.15)"/>
+            <!-- Stars -->
+            <circle cx="100" cy="80" r="2" fill="rgba(255,255,255,.4)"/>
+            <circle cx="380" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
+            <circle cx="420" cy="200" r="2" fill="rgba(255,255,255,.4)"/>
+            <circle cx="70" cy="220" r="2.5" fill="rgba(255,255,255,.3)"/>
+            <text x="250" y="40" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="11" font-family="sans-serif" letter-spacing="3">LIFE INSURANCE</text>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-tag">Protection</div>
+          <h2>Life Insurance Solutions</h2>
+          <p>Protect your loved ones with comprehensive coverage tailored for every stage of life. We help you choose the right plan so your family is always secure — no matter what.</p>
+          <ul class="service-features">
+            <li>Term Life Insurance — affordable, straightforward protection</li>
+            <li>Whole Life Insurance — lifelong coverage with cash value growth</li>
+            <li>Indexed Universal Life (IUL) — market-linked growth with downside protection</li>
+            <li>Final Expense Insurance — dignified coverage for end-of-life costs</li>
+            <li>Free policy review and comparison across top carriers</li>
+          </ul>
+          <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Get a Free Quote →</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="background:var(--off-white);">
+  <!-- RETIREMENT PLANNING -->
+  <section class="service-section">
     <div class="container">
-      <h2 style="text-align:center; margin-bottom:48px;">Retirement Planning</h2>
-      <p style="text-align:center; max-width:560px; margin:0 auto 24px;">Strategic planning to help you retire comfortably and maintain your lifestyle throughout your golden years.</p>
-      <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Get Started</a>
+      <div class="service-layout reverse">
+        <div class="service-visual">
+          <svg class="svc-illustration" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2a" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#0f2d1e"/>
+                <stop offset="100%" style="stop-color:#0a2240"/>
+              </linearGradient>
+              <linearGradient id="g2b" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#f59e0b"/>
+                <stop offset="100%" style="stop-color:#ef4444"/>
+              </linearGradient>
+            </defs>
+            <rect width="500" height="340" fill="url(#g2a)"/>
+            <!-- Sunset sky -->
+            <ellipse cx="250" cy="340" rx="300" ry="140" fill="rgba(245,158,11,.08)"/>
+            <!-- Sun -->
+            <circle cx="250" cy="175" r="55" fill="url(#g2b)" opacity=".85"/>
+            <circle cx="250" cy="175" r="42" fill="#fbbf24" opacity=".6"/>
+            <!-- Sun rays -->
+            <line x1="250" y1="100" x2="250" y2="80" stroke="#fbbf24" stroke-width="3" opacity=".5"/>
+            <line x1="308" y1="117" x2="322" y2="103" stroke="#fbbf24" stroke-width="3" opacity=".5"/>
+            <line x1="325" y1="175" x2="345" y2="175" stroke="#fbbf24" stroke-width="3" opacity=".5"/>
+            <line x1="192" y1="117" x2="178" y2="103" stroke="#fbbf24" stroke-width="3" opacity=".5"/>
+            <line x1="175" y1="175" x2="155" y2="175" stroke="#fbbf24" stroke-width="3" opacity=".5"/>
+            <!-- Mountains -->
+            <polygon points="80,280 180,160 280,280" fill="rgba(26,122,74,.6)"/>
+            <polygon points="200,280 310,155 420,280" fill="rgba(26,122,74,.8)"/>
+            <!-- Ground -->
+            <rect x="0" y="270" width="500" height="70" fill="rgba(26,122,74,.4)"/>
+            <!-- Growth arrow -->
+            <polyline points="60,250 110,220 170,230 230,200 290,210 360,170 410,150" fill="none" stroke="#4ade80" stroke-width="3" stroke-dasharray="6,3" opacity=".8"/>
+            <circle cx="410" cy="150" r="6" fill="#4ade80"/>
+            <text x="250" y="35" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="11" font-family="sans-serif" letter-spacing="3">RETIREMENT PLANNING</text>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-tag">Future Security</div>
+          <h2>Retirement Planning</h2>
+          <p>Your retirement should be the reward for a lifetime of hard work. We create a personalized strategy that ensures you never outlive your money and live the lifestyle you deserve.</p>
+          <ul class="service-features">
+            <li>401(k) & IRA optimization strategies</li>
+            <li>Roth conversion planning for tax-free retirement income</li>
+            <li>Social Security maximization analysis</li>
+            <li>Annuity solutions for guaranteed lifetime income</li>
+            <li>Retirement income projections and gap analysis</li>
+          </ul>
+          <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Plan My Retirement →</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- COLLEGE EDUCATION PLANNING -->
+  <section class="service-section">
     <div class="container">
-      <h2 style="text-align:center; margin-bottom:48px;">College Education Planning</h2>
-      <p style="text-align:center; max-width:560px; margin:0 auto 24px;">Save strategically for your child's college education with tax-efficient strategies.</p>
-      <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Get Started</a>
+      <div class="service-layout">
+        <div class="service-visual">
+          <svg class="svc-illustration" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g3a" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#1e1b4b"/>
+                <stop offset="100%" style="stop-color:#312e81"/>
+              </linearGradient>
+            </defs>
+            <rect width="500" height="340" fill="url(#g3a)"/>
+            <!-- Graduation cap -->
+            <polygon points="250,80 370,130 250,155 130,130" fill="#6ee09e" opacity=".9"/>
+            <rect x="235" y="155" width="30" height="70" fill="rgba(110,224,158,.5)"/>
+            <rect x="220" y="220" width="60" height="12" rx="6" fill="#6ee09e"/>
+            <!-- Tassel -->
+            <line x1="370" y1="130" x2="370" y2="170" stroke="#fbbf24" stroke-width="3"/>
+            <circle cx="370" cy="172" r="5" fill="#fbbf24"/>
+            <!-- Books stack -->
+            <rect x="80" y="210" width="90" height="14" rx="3" fill="#1a7a4a"/>
+            <rect x="85" y="196" width="80" height="14" rx="3" fill="#22a35f"/>
+            <rect x="78" y="182" width="95" height="14" rx="3" fill="#16a34a"/>
+            <!-- Coin/piggy bank -->
+            <circle cx="390" cy="230" r="45" fill="rgba(251,191,36,.15)" stroke="#fbbf24" stroke-width="2"/>
+            <circle cx="390" cy="230" r="30" fill="rgba(251,191,36,.2)"/>
+            <text x="390" y="237" text-anchor="middle" fill="#fbbf24" font-size="22" font-weight="bold" font-family="sans-serif">$</text>
+            <!-- Stars -->
+            <circle cx="140" cy="80" r="2" fill="rgba(255,255,255,.4)"/>
+            <circle cx="420" cy="100" r="2.5" fill="rgba(255,255,255,.3)"/>
+            <circle cx="80" cy="160" r="2" fill="rgba(255,255,255,.3)"/>
+            <text x="250" y="40" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="11" font-family="sans-serif" letter-spacing="3">COLLEGE PLANNING</text>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-tag">Education</div>
+          <h2>College Education Planning</h2>
+          <p>The cost of college doubles every decade. Start early with a smart savings strategy and give your child the gift of a debt-free education — without sacrificing your retirement.</p>
+          <ul class="service-features">
+            <li>529 College Savings Plan setup and optimization</li>
+            <li>Coverdell Education Savings Accounts (ESA)</li>
+            <li>UTMA/UGMA custodial accounts for flexibility</li>
+            <li>Financial aid impact analysis and strategies</li>
+            <li>Savings projections based on target school costs</li>
+          </ul>
+          <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Start Saving Today →</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="background:var(--off-white);">
+  <!-- WEALTH MANAGEMENT -->
+  <section class="service-section">
     <div class="container">
-      <h2 style="text-align:center; margin-bottom:48px;">Wealth Management</h2>
-      <p style="text-align:center; max-width:560px; margin:0 auto 24px;">Professional investment management and financial planning to help you build and preserve wealth.</p>
-      <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Get Started</a>
+      <div class="service-layout reverse">
+        <div class="service-visual">
+          <svg class="svc-illustration" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g4a" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#0d1f3c"/>
+                <stop offset="100%" style="stop-color:#064e3b"/>
+              </linearGradient>
+              <linearGradient id="g4b" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:#1a7a4a;stop-opacity:.3"/>
+                <stop offset="100%" style="stop-color:#22a35f;stop-opacity:.9"/>
+              </linearGradient>
+            </defs>
+            <rect width="500" height="340" fill="url(#g4a)"/>
+            <!-- Grid lines -->
+            <line x1="60" y1="60" x2="60" y2="280" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+            <line x1="60" y1="280" x2="450" y2="280" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+            <line x1="60" y1="210" x2="450" y2="210" stroke="rgba(255,255,255,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="60" y1="145" x2="450" y2="145" stroke="rgba(255,255,255,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="60" y1="80" x2="450" y2="80" stroke="rgba(255,255,255,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- Bars -->
+            <rect x="90" y="210" width="45" height="70" rx="4" fill="url(#g4b)"/>
+            <rect x="165" y="175" width="45" height="105" rx="4" fill="url(#g4b)"/>
+            <rect x="240" y="140" width="45" height="140" rx="4" fill="url(#g4b)"/>
+            <rect x="315" y="100" width="45" height="180" rx="4" fill="url(#g4b)"/>
+            <rect x="390" y="65" width="45" height="215" rx="4" fill="url(#g4b)" opacity="1"/>
+            <!-- Growth line -->
+            <polyline points="112,210 188,175 262,140 338,100 412,65" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Dots on line -->
+            <circle cx="112" cy="210" r="5" fill="#4ade80"/>
+            <circle cx="188" cy="175" r="5" fill="#4ade80"/>
+            <circle cx="262" cy="140" r="5" fill="#4ade80"/>
+            <circle cx="338" cy="100" r="5" fill="#4ade80"/>
+            <circle cx="412" cy="65" r="7" fill="#4ade80" stroke="white" stroke-width="2"/>
+            <!-- Arrow up -->
+            <path d="M412 50 L420 65 L404 65 Z" fill="#4ade80"/>
+            <text x="250" y="35" text-anchor="middle" fill="rgba(255,255,255,.5)" font-size="11" font-family="sans-serif" letter-spacing="3">WEALTH MANAGEMENT</text>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-tag">Growth</div>
+          <h2>Wealth Management</h2>
+          <p>Building wealth isn't just about investing — it's about a complete financial strategy. We help you grow, protect, and pass on your wealth across generations.</p>
+          <ul class="service-features">
+            <li>Personalized investment portfolio construction</li>
+            <li>Risk assessment and asset allocation strategy</li>
+            <li>Tax-efficient investing and loss harvesting</li>
+            <li>Estate planning and wealth transfer strategies</li>
+            <li>Regular portfolio reviews and rebalancing</li>
+          </ul>
+          <a onclick="showPage('contact')" class="btn btn-green" style="cursor:pointer;">Grow My Wealth →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1036,6 +1251,12 @@ function showPage(page) {
   if (el) {
     el.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Non-home pages have white background — always show dark navbar
+    if (page !== 'home') {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }
     setTimeout(triggerReveal, 100);
   }
 }
